@@ -45,4 +45,6 @@ You can learn more in the [Create React App documentation](https://facebook.gith
 
 To learn React, check out the [React documentation](https://reactjs.org/).
 # rts-x1
-# rts-x1
+
+## Resources 
+- https://www.twilio.com/blog/intro-custom-button-component-typescript-react
