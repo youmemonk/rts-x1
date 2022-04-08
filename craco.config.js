@@ -27,6 +27,9 @@ module.exports = {
 
               //Radio
               "@radio-dot-color": "@text-color-secondary",
+
+              //! Modal
+              "@modal-close-color": "@primary-color",
             },
             javascriptEnabled: true,
           },

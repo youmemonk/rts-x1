@@ -1,38 +1,21 @@
 import React from "react";
+import { Button } from "antd";
+import { buttonParams } from "../types";
+import "./customButton.less";
 
-interface Props {
-  border: string;
-  color: string;
-  children?: React.ReactNode;
-  height: string;
-  onClick: () => void;
-  radius: string;
-  width: string;
-}
-
-const Button: React.FC<Props> = ({
-  border,
-  color,
-  children,
-  height,
-  onClick,
-  radius,
-  width,
-}) => {
+const CustomButton = (btnProps: buttonParams) => {
   return (
-    <button
-      onClick={onClick}
-      style={{
-        backgroundColor: color,
-        border,
-        borderRadius: radius,
-        height,
-        width,
-      }}
+    <Button
+      className="defaultButton"
+      type={btnProps.type ? btnProps.type : "primary"}
+      size={btnProps.size}
+      disabled={btnProps.disabled ? btnProps.disabled : false}
+      onClick={btnProps.onClick}
+      shape={btnProps.shape ? btnProps.shape : "default"}
     >
-      {children}
-    </button>
+      {btnProps.label}
+    </Button>
   );
 };
 
-export default Button;
+export default CustomButton;

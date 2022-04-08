@@ -1,6 +1,13 @@
-import { ChangeEventHandler, ReactNode } from "react";
+import React, {
+  ChangeEventHandler,
+  ReactChild,
+  ReactChildren,
+  ReactNode,
+} from "react";
 import { ActionMeta, MultiValue, SingleValue } from "react-select";
+import { JsxChild, JsxElement } from "typescript";
 import { boolean } from "yup";
+import { MouseEvent } from "react";
 
 export interface payloadParams {
   url?: string;
@@ -23,12 +30,13 @@ export interface buttonPropsParams {
 
 //! Button
 export interface buttonParams {
-  type: "text" | "ghost" | "default" | "primary" | "dashed" | undefined;
+  type?: "text" | "ghost" | "default" | "primary" | "dashed" | undefined;
   htmlType?: "button" | "submit" | "reset" | undefined;
   label: string | "";
   disabled?: boolean;
-  size: "small" | "middle" | "large";
-  onClick: (event: any) => void;
+  size?: "small" | "middle" | "large";
+  // onClick: ((event: any) => void) | undefined;
+  onClick: ((event: MouseEvent<HTMLInputElement>) => void) | undefined;
   shape?: "default" | "circle" | "round";
 }
 
@@ -78,11 +86,13 @@ export interface radioGroupProps {
 //! Modal
 export interface modalProps {
   footer?: ReactNode;
-  title?: ReactNode;
+  title?: string | "";
   visible?: boolean;
-  onOk: (e: any) => void;
-  onCancel: (close: any) => void;
+  onOk?: (e: any) => void;
+  onCancel?: (close: any) => void;
+  children?: JSX.Element | JSX.Element[];
 }
+
 export interface formik {
   initialValues: {};
   validationSchema: {};
