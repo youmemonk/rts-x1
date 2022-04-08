@@ -1,19 +1,21 @@
-// import React from "react";
-// import styled from "styled-components";
-// import Checkbox from "antd/lib/checkbox/Checkbox";
+import { Checkbox } from "antd";
+import React from "react";
+import { checkboxProps } from "../types";
+// import "./styles.less";
 
-// function index() {
-//   const customCheckBox = styled(Checkbox)`
-//     ${(props) =>
-//       props.backgroundColor &&
-//       css`
-//         & .ant-checkbox-checked .ant-checkbox-inner {
-//           background-color: ${props.backgroundColor};
-//           border-color: ${props.backgroundColor};
-//         }
-//       `}
-//   `;
-//   return <customCheckBox backgroundColor="green" />;
-// }
+const CustomCheckbox = (checkParamps: checkboxProps) => {
+  return (
+    <>
+      <Checkbox
+        // checked={checkParamps.checked}
+        disabled={checkParamps.disabled ? checkParamps.disabled : false}
+        indeterminate={checkParamps.indeterminate}
+        onChange={checkParamps.onChange}
+      >
+        {checkParamps.label}
+      </Checkbox>
+    </>
+  );
+};
 
-// export default index;
+export default CustomCheckbox;

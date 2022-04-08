@@ -5,16 +5,15 @@ import "./App.css";
 import CustomButton from "./Components/AntButton/otherMethod";
 // import CustomButtonLink from "./Components/CustomButtonLink";
 import styled from "styled-components";
+import CustomCheckbox from "./Components/CustomCheckbox/Index";
 
 function App() {
   return (
     <>
-      <CustomButton label="Hi" />
-      {/* <CustomButtonLink label="Hello World" /> */}
-
-      {/* <Checkbox style={{ backgroundColor: "red", borderColor: "red" }}>
-        This is checkbox
-      </Checkbox> */}
+      <CustomCheckbox
+        label="Checkbox"
+        onChange={(e) => console.log(`checked = ${e.target.value}`)}
+      />
     </>
   );
 }
