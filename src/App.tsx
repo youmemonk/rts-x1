@@ -1,5 +1,5 @@
 import { Checkbox } from "antd";
-import "./App.css";
+import "./App.less";
 // import Button from "./Components/CustomButton/CustomButtonComponent";
 // import { Button } from "antd";
 import CustomButton from "./Components/AntButton/otherMethod";
