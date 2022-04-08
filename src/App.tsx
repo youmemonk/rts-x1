@@ -8,8 +8,12 @@ import CustomButton from "./Components/CustomButton/CustomButtonComponent";
 import CustomModal from "./Components/customModal";
 import { useState } from "react";
 
+import CustomSwitch from "./Components/CustomSwitch";
+
 function App() {
   const [isModalVisible, setIsModalVisible] = useState(false);
+
+  const [isShow, setIsShow] = useState(true);
 
   const showModal = () => {
     setIsModalVisible(true);
@@ -32,23 +36,16 @@ function App() {
         Click here
       </Button> */}
 
-      <CustomButton label="Click Me" onClick={showModal} />
+      {/* <CustomButton label="Click Me" onClick={showModal} />
 
       <CustomModal
         title="Basic Modal"
         visible={isModalVisible}
         onOk={handleOk}
         onCancel={handleCancel}
-      >
-        {/* <div>
-          <p>Lorem ipsum dolor sit amet.</p>
-          <p>Lorem ipsum dolor sit amet.</p>
-          <p>Lorem ipsum dolor sit amet.</p>
-          <p>Lorem ipsum dolor sit amet.</p>
-          <p>Lorem ipsum dolor sit amet.</p>
-          <p>Lorem ipsum dolor sit amet.</p>
-        </div> */}
-        <p>Lorem ipsum dolor sit amet.</p>
+      > */}
+
+      {/* <p>Lorem ipsum dolor sit amet.</p>
         <h1>hi</h1>
         <div>
           <p>
@@ -58,7 +55,18 @@ function App() {
             tempora sapiente rerum, nobis mollitia molestias.
           </p>
         </div>
-      </CustomModal>
+      </CustomModal> */}
+
+      <CustomSwitch
+        switchParam1="Active"
+        switchParam2="Archived"
+        subClass1={isShow ? "highlighted" : "normal"}
+        subClass2={isShow ? "normal" : "highlighted"}
+        onClick={() => {
+          setIsShow(!isShow);
+        }}
+        size="small"
+      />
     </>
   );
 }

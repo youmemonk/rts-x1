@@ -93,6 +93,16 @@ export interface modalProps {
   children?: JSX.Element | JSX.Element[];
 }
 
+//! switch
+export interface switchPropsParams {
+  switchParam1: string | "";
+  switchParam2: string | "";
+  onClick: ((event: MouseEvent<HTMLInputElement>) => void) | undefined;
+  subClass1: "normal" | "highlighted";
+  subClass2: "normal" | "highlighted";
+  size?: "small" | "middle" | "large";
+}
+
 export interface formik {
   initialValues: {};
   validationSchema: {};
