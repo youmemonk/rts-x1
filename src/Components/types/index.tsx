@@ -8,6 +8,7 @@ import { ActionMeta, MultiValue, SingleValue } from "react-select";
 import { JsxChild, JsxElement } from "typescript";
 import { boolean } from "yup";
 import { MouseEvent } from "react";
+import { Moment } from "moment";
 
 export interface payloadParams {
   url?: string;
@@ -101,6 +102,23 @@ export interface switchPropsParams {
   subClass1: "normal" | "highlighted";
   subClass2: "normal" | "highlighted";
   size?: "small" | "middle" | "large";
+}
+
+//! Date Picker
+export interface datePickerPropsParams {
+  dateRender?: (currentDate: Moment, today: Moment) => ReactNode;
+  mode?: "time" | "date" | "month" | "year" | "decade";
+  placeholder?: string | [string, string];
+  size?: "small" | "middle" | "large";
+  onPanelChange?: (
+    value: Moment,
+    mode: "time" | "date" | "month" | "year" | "decade"
+  ) => void;
+  showToday?: boolean;
+  value?: Moment;
+
+  onChange?: (date: Moment, dateString: string) => void;
+  onOK?: (e: any) => void;
 }
 
 export interface formik {

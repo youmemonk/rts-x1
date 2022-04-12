@@ -9,6 +9,7 @@ import CustomModal from "./Components/customModal";
 import { useState } from "react";
 
 import CustomSwitch from "./Components/CustomSwitch";
+import CustomDatePicker from "./Components/CustomDatePicker";
 
 function App() {
   const [isModalVisible, setIsModalVisible] = useState(false);
@@ -67,6 +68,8 @@ function App() {
         }}
         size="small"
       />
+
+      <CustomDatePicker size="large" onOK={() => console.log("checked")} />
     </>
   );
 }
