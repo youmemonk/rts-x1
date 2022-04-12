@@ -106,20 +106,28 @@ export interface switchPropsParams {
 
 //! Date Picker
 export interface datePickerPropsParams {
-  dateRender?: (currentDate: Moment, today: Moment) => ReactNode;
   mode?: "time" | "date" | "month" | "year" | "decade";
-  placeholder?: string | [string, string];
   size?: "small" | "middle" | "large";
-  onPanelChange?: (
-    value: Moment,
-    mode: "time" | "date" | "month" | "year" | "decade"
-  ) => void;
   showToday?: boolean;
   value?: Moment;
-
-  onChange?: (date: Moment, dateString: string) => void;
+  // onChange?: (date: Moment, dateString: string) => void;
+  onChange: (date: Moment | null, dateString: string) => void;
   onOK?: (e: any) => void;
+  formikField?: string;
 }
+
+export interface timePickerPropsParams {
+  use12Hours?: boolean;
+  size?: "small" | "middle" | "large";
+  showNow?: boolean;
+  value?: Moment;
+  // onChange?: (date: Moment, dateString: string) => void;
+  onChange: (time: Moment | null, timeString: string) => void;
+  onSelect: (time: Moment | null) => void;
+  formikField?: string;
+}
+
+export interface timePickerPropsParams {}
 
 export interface formik {
   initialValues: {};
